@@ -10,7 +10,7 @@ http.get(`${API_URL}/pacientes`, async () => {
   await delay(500)
   
   // 30% de probabilidad de error
-  if (Math.random() < 0.1) {
+  if (Math.random() < 0.2) {
     return HttpResponse.json({
       success: false,
       error: 'Error del servidor'

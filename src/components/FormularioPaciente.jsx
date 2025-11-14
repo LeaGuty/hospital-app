@@ -90,36 +90,36 @@ function FormularioPaciente({ onAgregar, onCancelar }) {
   }
 
   return (
-    <div className="bg-white rounded-xl shadow-lg p-6">
-      <h3 className="text-2xl font-bold text-gray-800 mb-6">
-        ➕ Registrar Nuevo Paciente
+    <div className="bg-gradient-to-br from-black to-hospital-darkRed rounded-xl shadow-dark-red p-6 border-2 border-hospital-primary">
+      <h3 className="text-2xl font-bold text-hospital-secondary mb-6 horror-text">
+        🧟 Registrar Nueva Víctima
       </h3>
 
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Campo: Nombre */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Nombre Completo *
+          <label className="block text-sm font-medium text-red-300 mb-1">
+            Nombre de la Víctima *
           </label>
           <input
             type="text"
             name="nombre"
             value={formData.nombre}
             onChange={handleChange}
-            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-hospital-primary focus:border-transparent transition-colors ${
-              errores.nombre ? 'border-red-500' : 'border-gray-300'
+            className={`w-full px-4 py-2 bg-black bg-opacity-70 text-red-100 border rounded-lg focus:ring-2 focus:ring-hospital-secondary focus:border-hospital-primary transition-all ${
+              errores.nombre ? 'border-hospital-secondary' : 'border-hospital-primary'
             }`}
             placeholder="Ej: Juan Pérez García"
           />
           {errores.nombre && (
-            <p className="text-red-500 text-sm mt-1">⚠️ {errores.nombre}</p>
+            <p className="text-hospital-secondary text-sm mt-1">⚠️ {errores.nombre}</p>
           )}
         </div>
 
         {/* Campo: Edad y Género (en la misma fila) */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-red-300 mb-1">
               Edad *
             </label>
             <input
@@ -127,27 +127,27 @@ function FormularioPaciente({ onAgregar, onCancelar }) {
               name="edad"
               value={formData.edad}
               onChange={handleChange}
-              className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-hospital-primary focus:border-transparent ${
-                errores.edad ? 'border-red-500' : 'border-gray-300'
+              className={`w-full px-4 py-2 bg-black bg-opacity-70 text-red-100 border rounded-lg focus:ring-2 focus:ring-hospital-secondary focus:border-hospital-primary transition-all ${
+                errores.edad ? 'border-hospital-secondary' : 'border-hospital-primary'
               }`}
               placeholder="Ej: 45"
               min="0"
               max="120"
             />
             {errores.edad && (
-              <p className="text-red-500 text-sm mt-1">⚠️ {errores.edad}</p>
+              <p className="text-hospital-secondary text-sm mt-1">⚠️ {errores.edad}</p>
             )}
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">
+            <label className="block text-sm font-medium text-red-300 mb-1">
               Género *
             </label>
             <select
               name="genero"
               value={formData.genero}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-hospital-primary focus:border-transparent"
+              className="w-full px-4 py-2 bg-black bg-opacity-70 text-red-100 border border-hospital-primary rounded-lg focus:ring-2 focus:ring-hospital-secondary focus:border-hospital-primary"
             >
               <option value="Masculino">Masculino</option>
               <option value="Femenino">Femenino</option>
@@ -158,7 +158,7 @@ function FormularioPaciente({ onAgregar, onCancelar }) {
 
         {/* Campo: Teléfono */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-red-300 mb-1">
             Teléfono
           </label>
           <input
@@ -166,19 +166,19 @@ function FormularioPaciente({ onAgregar, onCancelar }) {
             name="telefono"
             value={formData.telefono}
             onChange={handleChange}
-            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-hospital-primary focus:border-transparent ${
-              errores.telefono ? 'border-red-500' : 'border-gray-300'
+            className={`w-full px-4 py-2 bg-black bg-opacity-70 text-red-100 border rounded-lg focus:ring-2 focus:ring-hospital-secondary focus:border-hospital-primary transition-all ${
+              errores.telefono ? 'border-hospital-secondary' : 'border-hospital-primary'
             }`}
             placeholder="Ej: +56 9 8765 4321"
           />
           {errores.telefono && (
-            <p className="text-red-500 text-sm mt-1">⚠️ {errores.telefono}</p>
+            <p className="text-hospital-secondary text-sm mt-1">⚠️ {errores.telefono}</p>
           )}
         </div>
 
         {/* Campo: Email */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
+          <label className="block text-sm font-medium text-red-300 mb-1">
             Email *
           </label>
           <input
@@ -186,33 +186,33 @@ function FormularioPaciente({ onAgregar, onCancelar }) {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-hospital-primary focus:border-transparent ${
-              errores.email ? 'border-red-500' : 'border-gray-300'
+            className={`w-full px-4 py-2 bg-black bg-opacity-70 text-red-100 border rounded-lg focus:ring-2 focus:ring-hospital-secondary focus:border-hospital-primary transition-all ${
+              errores.email ? 'border-hospital-secondary' : 'border-hospital-primary'
             }`}
-            placeholder="Ej: paciente@email.com"
+            placeholder="Ej: victima@infierno.com"
           />
           {errores.email && (
-            <p className="text-red-500 text-sm mt-1">⚠️ {errores.email}</p>
+            <p className="text-hospital-secondary text-sm mt-1">⚠️ {errores.email}</p>
           )}
         </div>
 
         {/* Campo: Diagnóstico */}
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">
-            Diagnóstico *
+          <label className="block text-sm font-medium text-red-300 mb-1">
+            Maldición *
           </label>
           <textarea
             name="diagnostico"
             value={formData.diagnostico}
             onChange={handleChange}
             rows="3"
-            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-hospital-primary focus:border-transparent ${
-              errores.diagnostico ? 'border-red-500' : 'border-gray-300'
+            className={`w-full px-4 py-2 bg-black bg-opacity-70 text-red-100 border rounded-lg focus:ring-2 focus:ring-hospital-secondary focus:border-hospital-primary transition-all ${
+              errores.diagnostico ? 'border-hospital-secondary' : 'border-hospital-primary'
             }`}
-            placeholder="Ej: Control rutinario, Hipertensión, etc."
+            placeholder="Ej: Posesión demoníaca, Maldición ancestral, etc."
           />
           {errores.diagnostico && (
-            <p className="text-red-500 text-sm mt-1">⚠️ {errores.diagnostico}</p>
+            <p className="text-hospital-secondary text-sm mt-1">⚠️ {errores.diagnostico}</p>
           )}
         </div>
 
@@ -220,14 +220,14 @@ function FormularioPaciente({ onAgregar, onCancelar }) {
         <div className="flex gap-3 pt-4">
           <button
             type="submit"
-            className="flex-1 bg-hospital-primary hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
+            className="flex-1 bg-hospital-primary hover:bg-hospital-secondary text-white font-semibold py-3 px-6 rounded-lg transition-all shadow-red-glow hover:shadow-dark-red border-2 border-hospital-accent"
           >
-            ✅ Guardar Paciente
+            💀 Capturar Alma
           </button>
           <button
             type="button"
             onClick={onCancelar}
-            className="flex-1 bg-gray-500 hover:bg-gray-600 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
+            className="flex-1 bg-hospital-blood hover:bg-hospital-darkRed text-white font-semibold py-3 px-6 rounded-lg transition-all border-2 border-hospital-primary"
           >
             ❌ Cancelar
           </button>
